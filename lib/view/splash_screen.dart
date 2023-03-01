@@ -15,16 +15,12 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
-    return InternetExceptionWidget();
-
-/*    return Scaffold(
+    return Scaffold(
       appBar: AppBar(
         title: Text('Splash Screen'),
         centerTitle: true,
       ),
-      body: Image(
-        image: AssetImage(ImageAssets.splashScreen),
-      ),
-    );*/
+      body: InternetExceptionWidget(),
+    );
   }
 }

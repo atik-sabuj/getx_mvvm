@@ -27,6 +27,14 @@ class _InternetExceptionWidgetState extends State<InternetExceptionWidget> {
             child: Center(child: Text('internet_exception'.tr)),
           ),
           SizedBox(height: height * .15,),
+
+          Container(
+            height: 44,
+            width: 168,
+            decoration: BoxDecoration(
+            ),
+            child: Text('Retry'),
+          ),
         ],
       ),
     );
