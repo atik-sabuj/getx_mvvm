@@ -17,12 +17,6 @@ class _SplashScreenState extends State<SplashScreen> {
         title: Text('Splash Screen'),
         centerTitle: true,
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          Utils.toastMessage('Sabuj Atik');
-          Utils.toastMessageCenter('Sabuj Atik');
-        },
-      ),
     );
   }
 }
