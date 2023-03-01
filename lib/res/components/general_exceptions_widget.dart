@@ -1,8 +1,4 @@
 
-
-
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_mvvm/res/colors/app_color.dart';
