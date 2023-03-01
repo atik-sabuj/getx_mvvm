@@ -24,7 +24,7 @@ class _InternetExceptionWidgetState extends State<InternetExceptionWidget> {
           Icon(Icons.cloud_off, color: AppColor.redColor,size: 50,),
           Padding(
             padding: const EdgeInsets.only(top: 30),
-            child: Center(child: Text('internet_exception'.tr)),
+            child: Center(child: Text('internet_exception'.tr, textAlign: TextAlign.center,)),
           ),
           SizedBox(height: height * .15,),
 
@@ -32,8 +32,10 @@ class _InternetExceptionWidgetState extends State<InternetExceptionWidget> {
             height: 44,
             width: 168,
             decoration: BoxDecoration(
+              color: AppColor.primaryColor,
+              borderRadius: BorderRadius.circular(50),
             ),
-            child: Text('Retry'),
+            child: Center(child: Text('Retry', style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Colors.white),)),
           ),
         ],
       ),
