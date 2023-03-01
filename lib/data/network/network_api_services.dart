@@ -1,4 +1,5 @@
 
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:getx_mvvm/data/app_exceptions.dart';
@@ -14,6 +15,8 @@ class NetworkApiServices extends BaseApiServices {
     try {
 
       final response = await http.get(Uri.parse(url)).timeout(const Duration(seconds: 10));
+      responseJson = returnResponse(response);
+
     }on SocketException {
       throw InternetException('');
     }on RequestTimeOut {
@@ -21,6 +24,20 @@ class NetworkApiServices extends BaseApiServices {
     }
 
     return responseJson;
+  }
+
+  dynamic returnResponse(http.Response response){
+    switch(response.statusCode){
+      case 200:
+      dynamic responseJson = jsonDecode(response.body);
+      return responseJson;
+
+      case 400:
+        throw InvalidUrlException;
+
+      default:
+        throw FetchDataException('Error accoured while communication server');
+    }
   }
 
 }
