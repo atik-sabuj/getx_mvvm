@@ -8,7 +8,8 @@ class Languages extends Translations {
   Map<String, Map<String, String>> get keys => {
 
     'en_US' : {
-      'email_hint' : 'Enter email'
+      'email_hint' : 'Enter email',
+      'internet_exception' : "We're unable to show results.\nPlease check your data\nconnection."
     },
 
     'ban_BD' : {

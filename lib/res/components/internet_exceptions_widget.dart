@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:getx_mvvm/res/colors/app_color.dart';
 
 class InternetExceptionWidget extends StatefulWidget {
@@ -17,7 +18,11 @@ class _InternetExceptionWidgetState extends State<InternetExceptionWidget> {
         padding: EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         children: [
-          Icon(Icons.cloud_off, color: AppColor.whiteColor,),
+          Icon(Icons.cloud_off, color: AppColor.redColor,),
+          Padding(
+            padding: const EdgeInsets.only(top: 30),
+            child: Center(child: Text('internet_exception'.tr)),
+          ),
         ],
       ),
     );
