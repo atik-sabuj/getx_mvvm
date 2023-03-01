@@ -16,10 +16,10 @@ class _SplashScreenState extends State<SplashScreen> {
         title: Text('Splash Screen'),
         centerTitle: true,
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          throw InternetException('this is Atik Sabuj');
-        },
+      body: Column(
+        children: [
+
+        ],
       ),
     );
   }
