@@ -20,7 +20,10 @@ class _SplashScreenState extends State<SplashScreen> {
         title: Text('Splash Screen'),
         centerTitle: true,
       ),
-      body: InternetExceptionWidget(),
+      body: InternetExceptionWidget(
+        onPress: () {
+
+        },),
     );
   }
 }
