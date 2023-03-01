@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_mvvm/data/app_exceptions.dart';
+import 'package:getx_mvvm/res/assets/image_assets.dart';
 import 'package:getx_mvvm/utils/utils.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -18,10 +19,8 @@ class _SplashScreenState extends State<SplashScreen> {
         title: Text('Splash Screen'),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          Center(child: Text('email_hint'.tr)),
-        ],
+      body: Image(
+        image: AssetImage(ImageAssets.splashScreen),
       ),
     );
   }
