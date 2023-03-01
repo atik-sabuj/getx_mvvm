@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getx_mvvm/data/app_exceptions.dart';
+import 'package:getx_mvvm/utils/utils.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -16,10 +17,11 @@ class _SplashScreenState extends State<SplashScreen> {
         title: Text('Splash Screen'),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-
-        ],
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          Utils.toastMessage('Sabuj Atik');
+          Utils.toastMessageCenter('Sabuj Atik');
+        },
       ),
     );
   }

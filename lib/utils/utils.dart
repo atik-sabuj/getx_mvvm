@@ -16,6 +16,8 @@ class Utils {
         msg: message,
       backgroundColor: AppColor.blackColor,
       gravity: ToastGravity.BOTTOM,
+      toastLength: Toast.LENGTH_LONG,
+      textColor: AppColor.whiteColor,
     );
   }
 
@@ -24,6 +26,8 @@ class Utils {
       msg: message,
       backgroundColor: AppColor.blackColor,
       gravity: ToastGravity.CENTER,
+      toastLength: Toast.LENGTH_LONG,
+      textColor: AppColor.whiteColor,
     );
   }
 
