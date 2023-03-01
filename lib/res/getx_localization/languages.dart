@@ -11,5 +11,17 @@ class Languages extends Translations {
       'email_hint' : 'Enter email'
     },
 
+    'ban_BD' : {
+      'email_hint' : 'ইমেইল প্রদান করুন'
+    },
+
+    'ur_PK' : {
+      'email_hint' : 'ای میل درج کریں۔'
+    },
+
+    'hin_IND' : {
+      'email_hint' : 'ईमेल दर्ज करें'
+    },
+
   };
 }
