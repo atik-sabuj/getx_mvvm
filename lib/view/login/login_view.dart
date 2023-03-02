@@ -45,13 +45,32 @@ class _LoginViewState extends State<LoginView> {
                     }
                     },
                     onFieldSubmitted: (value){
-
+                      Utils.fieldFocusChange(context, loginVM.emailFocusNode.value, loginVM.passwordFocusNode.value);
                     },
                     decoration: InputDecoration(
                       hintText: 'email_hint'.tr,
                       border: OutlineInputBorder(),
                     ),
                   ),
+                  SizedBox(height: 20,),
+
+                  TextFormField(
+                    controller: loginVM.emailController.value,
+                    focusNode: loginVM.emailFocusNode.value,
+                    validator: (value){
+                      if(value!.isEmpty){
+                        Utils.snakBar('Password', 'Enter password');
+                      }
+                    },
+                    onFieldSubmitted: (value){
+
+                    },
+                    decoration: InputDecoration(
+                      hintText: 'password_hint'.tr,
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+
                 ],
               ),
             ),
