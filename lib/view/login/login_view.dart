@@ -55,8 +55,8 @@ class _LoginViewState extends State<LoginView> {
                   SizedBox(height: 20,),
 
                   TextFormField(
-                    controller: loginVM.emailController.value,
-                    focusNode: loginVM.emailFocusNode.value,
+                    controller: loginVM.passwordController.value,
+                    focusNode: loginVM.passwordFocusNode.value,
                     validator: (value){
                       if(value!.isEmpty){
                         Utils.snakBar('Password', 'Enter password');
