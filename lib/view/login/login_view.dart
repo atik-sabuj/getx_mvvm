@@ -80,7 +80,9 @@ class _LoginViewState extends State<LoginView> {
             const SizedBox(height: 40,),
             RoundButton(
               width: 200,
-                title: 'login'.tr, onPress: (){
+                title: 'login'.tr,
+                loading: loginVM.loading.value,
+                onPress: (){
                 if(_formkey.currentState!.validate()){
 
                 }
