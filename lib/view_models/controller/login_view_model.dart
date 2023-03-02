@@ -30,6 +30,7 @@ class LoginViewModel extends GetxController{
       loading.value = false;
       Utils.snakBar('Log In', 'Login Successfully');
     }).onError((error, stackTrace){
+      print(error.toString());
       loading.value = false;
       Utils.snakBar('Error', error.toString());
     });
