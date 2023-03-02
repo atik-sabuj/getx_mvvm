@@ -18,14 +18,15 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.teal,
       appBar: AppBar(
         title: Text('Splash Screen'),
         centerTitle: true,
       ),
       body: Column(
         children: [
-          RoundButton(onPress: (){}, title: 'Log In',width: double.infinity,loading: true,),
-          RoundButton(onPress: (){}, title: 'Sign Up',width: 200,),
+          /*RoundButton(onPress: (){}, title: 'Log In',width: double.infinity,loading: true,),
+          RoundButton(onPress: (){}, title: 'Sign Up',width: 200,),*/
         ],
       ),
     );
