@@ -23,11 +23,8 @@ class _SplashScreenState extends State<SplashScreen> {
         title: Text('Splash Screen'),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          /*RoundButton(onPress: (){}, title: 'Log In',width: double.infinity,loading: true,),
-          RoundButton(onPress: (){}, title: 'Sign Up',width: 200,),*/
-        ],
+      body: Center(
+        child: Text('Welcome Back'),
       ),
     );
   }
