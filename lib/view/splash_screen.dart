@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
         centerTitle: true,
       ),
       body: Center(
-        child: Text('Welcome Back'),
+        child: Text('welcome_back'.tr, textAlign: TextAlign.center,),
       ),
     );
   }
