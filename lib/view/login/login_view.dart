@@ -52,11 +52,13 @@ class _LoginViewState extends State<LoginView> {
                       border: OutlineInputBorder(),
                     ),
                   ),
-                  SizedBox(height: 20,),
+                  const SizedBox(height: 20,),
 
                   TextFormField(
                     controller: loginVM.passwordController.value,
                     focusNode: loginVM.passwordFocusNode.value,
+                    obscureText: true,
+                    obscuringCharacter: '*',
                     validator: (value){
                       if(value!.isEmpty){
                         Utils.snakBar('Password', 'Enter password');
@@ -75,7 +77,7 @@ class _LoginViewState extends State<LoginView> {
               ),
             ),
 
-            SizedBox(height: 40,),
+            const SizedBox(height: 40,),
             RoundButton(
               width: 200,
                 title: 'login'.tr, onPress: (){
