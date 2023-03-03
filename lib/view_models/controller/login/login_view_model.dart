@@ -38,7 +38,13 @@ class LoginViewModel extends GetxController{
       if(value['error'] == 'user not found'){
         Utils.snakBar('Login', value['error']);
       }else {
-        userPreference.saveUser(UserModel.fromJson(value)).then((value){
+
+        UserModel userModel = UserModel(
+          token: value['token'],
+          isLogin: true,
+        );
+
+        userPreference.saveUser(userModel).then((value){
           Get.toNamed(RouteName.homeView);
         }).onError((error, stackTrace){
 
