@@ -1,5 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:getx_mvvm/res/routes/routes_name.dart';
+import 'package:getx_mvvm/view_models/controller/user_preference/user_preference_view_model.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -9,13 +12,22 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+
+  UserPreference userPreference = UserPreference();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(''),
-        centerTitle: true,
-        automaticallyImplyLeading: false,
+        title: Text('Home View'),
+        actions: [
+          IconButton(onPressed:(){
+            userPreference.removeUser().then((value){
+              Get.toNamed(RouteName.loginView);
+            });
+
+    },icon: Icon(Icons.logout),),
+        ],
       ),
     );
   }

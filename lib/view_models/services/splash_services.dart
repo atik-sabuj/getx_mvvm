@@ -16,7 +16,7 @@ class SplashServices {
       print(value.token);
       print(value.isLogin);
 
-      if(value.isLogin == false || value.token.toString() == 'null'){
+      if(value.isLogin == false || value.isLogin.toString() == 'null'){
         Timer(const Duration(seconds: 3),
                 () => Get.toNamed(RouteName.loginView));
 
