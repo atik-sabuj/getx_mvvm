@@ -9,11 +9,13 @@ class Languages extends Translations {
 
     'en_US' : {
       'email_hint' : 'Email',
+      'password_hint' : 'Password',
       'internet_exception' : "We're unable to show results.\nPlease check your data\nconnection.",
       'general_exception' : "We're unable to process your request.\nPlease try again.",
       'welcome_back' : 'Welcome\nBack',
       'login' : 'Log In',
-      'password_hint' : 'Password',
+      'homeview' : 'Home View',
+
     },
 
 

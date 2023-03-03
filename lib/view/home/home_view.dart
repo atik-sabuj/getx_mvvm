@@ -11,6 +11,12 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(''),
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+      ),
+    );
   }
 }
