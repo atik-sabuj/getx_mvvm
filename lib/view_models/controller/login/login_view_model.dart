@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_mvvm/models/login/user_model.dart';
 import 'package:getx_mvvm/repository/login_repository/login_repository.dart';
+import 'package:getx_mvvm/res/routes/routes_name.dart';
 import 'package:getx_mvvm/utils/utils.dart';
 import 'package:getx_mvvm/view_models/controller/user_preference/user_preference_view_model.dart';
 
@@ -38,7 +39,7 @@ class LoginViewModel extends GetxController{
         Utils.snakBar('Login', value['error']);
       }else {
         userPreference.saveUser(UserModel.fromJson(value)).then((value){
-
+          Get.toNamed(RouteName.homeView);
         }).onError((error, stackTrace){
 
         });
