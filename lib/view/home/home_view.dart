@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_mvvm/res/routes/routes_name.dart';
+import 'package:getx_mvvm/view_models/controller/home/home_view_model.dart';
 import 'package:getx_mvvm/view_models/controller/user_preference/user_preference_view_model.dart';
 
 class HomeView extends StatefulWidget {
@@ -13,7 +14,16 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
 
+  final homeController = Get.put(HomeController());
+
   UserPreference userPreference = UserPreference();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    homeController.userListApi();
+  }
 
   @override
   Widget build(BuildContext context) {
