@@ -47,7 +47,16 @@ class _HomeViewState extends State<HomeView> {
           case Status.ERROR:
             return Text('Something Went Wrong');
           case Status.COMPLETED:
-            return Text('Request Successfully Done');
+            return ListView.builder(
+              itemCount: homeController.userList.value.data!.length,
+                itemBuilder: (context,index){
+                  return Card(
+                    child: ListTile(
+                    title: Text(),
+                  ),
+                  );
+                }
+                );
         }
       }),
     );
