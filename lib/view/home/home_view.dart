@@ -2,12 +2,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_mvvm/data/response/status.dart';
+import 'package:getx_mvvm/res/components/general_exceptions_widget.dart';
 import 'package:getx_mvvm/res/components/internet_exceptions_widget.dart';
 import 'package:getx_mvvm/res/routes/routes_name.dart';
 import 'package:getx_mvvm/view_models/controller/home/home_view_model.dart';
 import 'package:getx_mvvm/view_models/controller/user_preference/user_preference_view_model.dart';
 
-import '../../res/components/general_exceptions_widget.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -47,7 +47,7 @@ class _HomeViewState extends State<HomeView> {
       body: Obx((){
         switch(homeController.rxRequestStatus.value){
           case Status.LOADING:
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           case Status.ERROR:
             if(homeController.error.value == 'No Internet'){
               return InternetExceptionWidget(onPress: () {
