@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_mvvm/data/response/status.dart';
 import 'package:getx_mvvm/res/routes/routes_name.dart';
 import 'package:getx_mvvm/view_models/controller/home/home_view_model.dart';
 import 'package:getx_mvvm/view_models/controller/user_preference/user_preference_view_model.dart';
@@ -39,6 +40,17 @@ class _HomeViewState extends State<HomeView> {
     },icon: Icon(Icons.logout),),
         ],
       ),
+      body: Obx((){
+        switch(homeController.rxRequestStatus.value){
+          case Status.LOADING:
+            return Center(child: CircularProgressIndicator());
+          case Status.ERROR:
+            return Text('Something Went Wrong');
+          case Status.COMPLETED:
+            return Center(child: CircularProgressIndicator());
+        }
+        return SizedBox();
+      }),
     );
   }
 }
