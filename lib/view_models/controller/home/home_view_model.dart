@@ -17,6 +17,7 @@ class HomeController extends GetxController {
   void setError(String _value) => error.value = _value;
 
   void userListApi(){
+    //setRxRequestStatus(Status.LOADING);
 
     _api.userListApi().then((value){
       setRxRequestStatus(Status.COMPLETED);
@@ -25,6 +26,21 @@ class HomeController extends GetxController {
       setError(error.toString());
       print(error);
       print(stackTrace);
+      setRxRequestStatus(Status.ERROR);
+
+    });
+  }
+
+
+  void refreshApi(){
+
+    setRxRequestStatus(Status.LOADING);
+
+    _api.userListApi().then((value){
+      setRxRequestStatus(Status.COMPLETED);
+      setUserList(value);
+    }).onError((error, stackTrace){
+      setError(error.toString());
       setRxRequestStatus(Status.ERROR);
 
     });

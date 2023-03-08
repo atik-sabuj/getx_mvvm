@@ -7,6 +7,8 @@ import 'package:getx_mvvm/res/routes/routes_name.dart';
 import 'package:getx_mvvm/view_models/controller/home/home_view_model.dart';
 import 'package:getx_mvvm/view_models/controller/user_preference/user_preference_view_model.dart';
 
+import '../../res/components/general_exceptions_widget.dart';
+
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
 
@@ -49,12 +51,13 @@ class _HomeViewState extends State<HomeView> {
           case Status.ERROR:
             if(homeController.error.value == 'No Internet'){
               return InternetExceptionWidget(onPress: () {
-                homeController.userListApi();
+                homeController.refreshApi();
               },);
             }else{
-              return Center(child: Text(homeController.error.toString()));
+              return GeneralExceptionWidget(onPress: (){
+                homeController.refreshApi();
+              },);
             }
-            return Center(child: Text(homeController.error.toString()));
           case Status.COMPLETED:
             return ListView.builder(
               itemCount: homeController.userList.value.data!.length,
