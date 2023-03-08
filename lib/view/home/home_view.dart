@@ -31,13 +31,14 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Home View'),
+        automaticallyImplyLeading: false,
         actions: [
           IconButton(onPressed:(){
             userPreference.removeUser().then((value){
               Get.toNamed(RouteName.loginView);
             });
-
-    },icon: Icon(Icons.logout),),
+            },
+            icon: Icon(Icons.logout),),
         ],
       ),
       body: Obx((){
@@ -45,7 +46,7 @@ class _HomeViewState extends State<HomeView> {
           case Status.LOADING:
             return Center(child: CircularProgressIndicator());
           case Status.ERROR:
-            return Text('Something Went Wrong');
+            return Center(child: Text(homeController.error.toString()));
           case Status.COMPLETED:
             return ListView.builder(
               itemCount: homeController.userList.value.data!.length,
