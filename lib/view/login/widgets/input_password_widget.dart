@@ -13,18 +13,20 @@ class InputPasswordWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: loginVM.emailController.value,
-      focusNode: loginVM.emailFocusNode.value,
+      controller: loginVM.passwordController.value,
+      focusNode: loginVM.passwordFocusNode.value,
+      obscureText: true,
+      obscuringCharacter: '*',
       validator: (value){
         if(value!.isEmpty){
-          Utils.snakBar('Email', 'Enter email');
+          Utils.snakBar('Password', 'Enter password');
         }
       },
       onFieldSubmitted: (value){
-        Utils.fieldFocusChange(context, loginVM.emailFocusNode.value, loginVM.passwordFocusNode.value);
+
       },
       decoration: InputDecoration(
-        hintText: 'email_hint'.tr,
+        hintText: 'password_hint'.tr,
         border: OutlineInputBorder(),
       ),
     );
