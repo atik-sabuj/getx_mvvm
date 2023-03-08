@@ -47,9 +47,8 @@ class _HomeViewState extends State<HomeView> {
           case Status.ERROR:
             return Text('Something Went Wrong');
           case Status.COMPLETED:
-            return Center(child: CircularProgressIndicator());
+            return Text('Request Successfully Done');
         }
-        return SizedBox();
       }),
     );
   }
