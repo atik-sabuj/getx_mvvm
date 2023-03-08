@@ -52,7 +52,11 @@ class _HomeViewState extends State<HomeView> {
                 itemBuilder: (context,index){
                   return Card(
                     child: ListTile(
-                    title: Text(),
+                      leading: CircleAvatar(
+                        backgroundImage: NetworkImage(homeController.userList.value.data![index].avatar.toString()),
+                      ),
+                    title: Text(homeController.userList.value.data![index].firstName.toString()),
+                      subtitle: Text(homeController.userList.value.data![index].email.toString()),
                   ),
                   );
                 }
