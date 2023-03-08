@@ -1,10 +1,10 @@
 
 class RouteName {
 
-  static const String homeView = '/';
+  static const String homeView = '/home_View';
 
   static const String splashScreen = '/splash_Screen';
 
-  static const String loginView = '/login_view';
+  static const String loginView = '/';
 
 }
