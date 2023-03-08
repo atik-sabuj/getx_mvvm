@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:getx_mvvm/res/components/round_button.dart';
 import 'package:getx_mvvm/utils/utils.dart';
 import 'package:getx_mvvm/view_models/controller/login/login_view_model.dart';
+import 'widgets/input_email_widget.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -36,22 +37,7 @@ class _LoginViewState extends State<LoginView> {
               key: _formkey,
               child: Column(
                 children: [
-                  TextFormField(
-                    controller: loginVM.emailController.value,
-                    focusNode: loginVM.emailFocusNode.value,
-                    validator: (value){
-                      if(value!.isEmpty){
-                        Utils.snakBar('Email', 'Enter email');
-                    }
-                    },
-                    onFieldSubmitted: (value){
-                      Utils.fieldFocusChange(context, loginVM.emailFocusNode.value, loginVM.passwordFocusNode.value);
-                    },
-                    decoration: InputDecoration(
-                      hintText: 'email_hint'.tr,
-                      border: OutlineInputBorder(),
-                    ),
-                  ),
+                  InputEmailWidget(),
                   const SizedBox(height: 20,),
 
                   TextFormField(
