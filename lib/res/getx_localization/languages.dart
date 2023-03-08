@@ -14,7 +14,7 @@ class Languages extends Translations {
       'general_exception' : "We're unable to process your request.\nPlease try again.",
       'welcome_back' : 'Welcome\nBack',
       'login' : 'Log In',
-      'homeview' : 'Home View',
+
 
     },
 
